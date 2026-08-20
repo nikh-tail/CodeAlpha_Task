@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina | Modern Interactive Image Gallery</title>
+  <meta name="description" content="A modern, responsive, interactive image gallery with category filtering, visual style filters, search, hover animations, and a full-featured lightbox.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background Glow Accents -->
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  <div class="app-container">
+    <!-- Header Section -->
+    <header class="app-header">
+      <div class="header-content">
+        <div class="brand">
+          <div class="brand-icon">
+            <i class="fa-solid fa-camera-retro"></i>
+          </div>
+          <div class="brand-text">
+            <h1>LUMINA<span class="brand-accent">.</span></h1>
+            <p class="tagline">Curated Visual Showcase</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <div class="stats-badge" id="stats-badge" title="Total photos loaded">
+            <i class="fa-regular fa-image"></i>
+            <span id="photo-count-text">18 Photos</span>
+          </div>
+
+          <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark/Light Mode" title="Toggle theme (T)">
+            <i class="fa-solid fa-sun light-icon"></i>
+            <i class="fa-solid fa-moon dark-icon"></i>
+          </button>
+
+          <button id="help-btn" class="icon-btn" aria-label="Keyboard Shortcuts" title="Keyboard Shortcuts (?)">
+            <i class="fa-solid fa-keyboard"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Controls & Filter Toolbar -->
+    <section class="controls-section" aria-label="Gallery Controls">
+      <!-- Search & Layout Bar -->
+      <div class="search-and-tools">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Search by title, tag, photographer, location... (Press /)" 
+            autocomplete="off"
+            aria-label="Search images"
+          >
+          <button id="clear-search-btn" class="clear-search-btn" aria-label="Clear search" hidden>
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="toolbar-dropdowns">
+          <!-- Visual Style Filters -->
+          <div class="control-group">
+            <label for="visual-filter-select"><i class="fa-solid fa-wand-magic-sparkles"></i> Filter Effect:</label>
+            <select id="visual-filter-select" aria-label="Select visual image filter">
+              <option value="none">Original (Normal)</option>
+              <option value="filter-vivid">Vivid & High Pop</option>
+              <option value="filter-vintage">Vintage Warmth</option>
+              <option value="filter-noir">Noir (B&W)</option>
+              <option value="filter-sepia">Classic Sepia</option>
+              <option value="filter-cool">Cyber Cool</option>
+              <option value="filter-cinematic">Cinematic Mood</option>
+            </select>
+          </div>
+
+          <!-- Sort Selector -->
+          <div class="control-group">
+            <label for="sort-select"><i class="fa-solid fa-arrow-down-wide-short"></i> Sort:</label>
+            <select id="sort-select" aria-label="Sort images">
+              <option value="popular">Most Popular (Likes)</option>
+              <option value="newest">Newest First</option>
+              <option value="title">Title (A – Z)</option>
+            </select>
+          </div>
+
+          <!-- Grid Density / View Mode -->
+          <div class="view-mode-toggle" role="group" aria-label="Grid layout toggle">
+            <button class="view-btn active" data-view="grid" title="Standard Grid View">
+              <i class="fa-solid fa-grip"></i>
+            </button>
+            <button class="view-btn" data-view="masonry" title="Masonry Dynamic View">
+              <i class="fa-solid fa-cubes-stacked"></i>
+            </button>
+            <button class="view-btn" data-view="compact" title="Compact High-Density View">
+              <i class="fa-solid fa-table-cells"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <nav class="category-nav" aria-label="Image Categories">
+        <div class="category-pills" id="category-pills" role="tablist">
+          <button class="category-pill active" data-category="all" role="tab" aria-selected="true">
+            <i class="fa-solid fa-border-all"></i> All
+          </button>
+          <button class="category-pill" data-category="nature" role="tab" aria-selected="false">
+            <i class="fa-solid fa-mountain-sun"></i> Nature
+          </button>
+          <button class="category-pill" data-category="architecture" role="tab" aria-selected="false">
+            <i class="fa-solid fa-city"></i> Architecture
+          </button>
+          <button class="category-pill" data-category="travel" role="tab" aria-selected="false">
+            <i class="fa-solid fa-plane-departure"></i> Travel
+          </button>
+          <button class="category-pill" data-category="people" role="tab" aria-selected="false">
+            <i class="fa-solid fa-user-group"></i> People & Portraits
+          </button>
+          <button class="category-pill" data-category="animals" role="tab" aria-selected="false">
+            <i class="fa-solid fa-paw"></i> Wildlife
+          </button>
+          <button class="category-pill" data-category="urban" role="tab" aria-selected="false">
+            <i class="fa-solid fa-road"></i> Urban & Street
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <!-- Active Filter Status & Reset -->
+    <div id="filter-status-bar" class="filter-status-bar" hidden>
+      <span>Filtering by: <strong id="active-filter-label">Nature</strong> (<span id="filtered-count">0</span> results)</span>
+      <button id="reset-filters-btn" class="text-btn"><i class="fa-solid fa-rotate-left"></i> Reset All</button>
+    </div>
+
+    <!-- Gallery Grid Main Section -->
+    <main class="gallery-container">
+      <div id="gallery-grid" class="gallery-grid view-grid" role="region" aria-label="Image Gallery Grid">
+        <!-- Gallery cards will be dynamically rendered via JavaScript -->
+      </div>
+
+      <!-- Empty State / No Results -->
+      <div id="empty-state" class="empty-state" hidden>
+        <div class="empty-icon"><i class="fa-regular fa-face-frown-open"></i></div>
+        <h3>No matching images found</h3>
+        <p>Try searching for a different keyword or choose another category filter.</p>
+        <button id="empty-reset-btn" class="primary-btn"><i class="fa-solid fa-arrows-rotate"></i> Reset Filters</button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-content">
+        <p>© 2026 LUMINA Image Gallery • Crafted with modern HTML5, CSS Grid & JavaScript.</p>
+        <div class="footer-links">
+          <span><i class="fa-solid fa-bolt"></i> Fast & Lightweight</span>
+          <span><i class="fa-solid fa-arrows-to-eye"></i> Touch & Keyboard Accessible</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Lightbox Modal Component -->
+  <div id="lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image Lightbox Viewer">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    
+    <div class="lightbox-dialog">
+      <!-- Lightbox Header / Controls -->
+      <div class="lightbox-header">
+        <div class="lightbox-info">
+          <span class="lightbox-counter" id="lightbox-counter">1 / 18</span>
+          <h2 class="lightbox-title" id="lightbox-title">Image Title</h2>
+        </div>
+
+        <div class="lightbox-actions">
+          <!-- Autoplay Slideshow Button -->
+          <button id="lightbox-slideshow-btn" class="lb-btn" aria-label="Toggle Slideshow (Space)" title="Autoplay Slideshow (Space)">
+            <i class="fa-solid fa-play"></i>
+            <span class="slideshow-progress-bar" id="slideshow-progress"></span>
+          </button>
+
+          <!-- Zoom In / Out Controls -->
+          <div class="zoom-controls">
+            <button id="lightbox-zoom-out" class="lb-btn" aria-label="Zoom out" title="Zoom Out (-)">
+              <i class="fa-solid fa-magnifying-glass-minus"></i>
+            </button>
+            <span id="zoom-level-text" class="zoom-level">100%</span>
+            <button id="lightbox-zoom-in" class="lb-btn" aria-label="Zoom in" title="Zoom In (+)">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </button>
+          </div>
+
+          <!-- Fullscreen Toggle -->
+          <button id="lightbox-fullscreen-btn" class="lb-btn" aria-label="Toggle Fullscreen (F)" title="Fullscreen (F)">
+            <i class="fa-solid fa-expand"></i>
+          </button>
+
+          <!-- Download Button -->
+          <a id="lightbox-download-btn" class="lb-btn" href="#" target="_blank" rel="noopener" download aria-label="Download high resolution image" title="Download High-Res">
+            <i class="fa-solid fa-download"></i>
+          </a>
+
+          <!-- Close Button -->
+          <button id="lightbox-close-btn" class="lb-btn close-btn" aria-label="Close Lightbox (Esc)" title="Close (Escape)">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lightbox Main Stage (Viewport) -->
+      <div class="lightbox-stage" id="lightbox-stage">
+        <!-- Prev Button -->
+        <button id="lightbox-prev-btn" class="lb-nav-btn prev-btn" aria-label="Previous Image (Left Arrow)" title="Previous (Left Arrow)">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <!-- Image Display Area -->
+        <div class="lightbox-image-wrapper" id="lightbox-image-wrapper">
+          <div class="lb-spinner" id="lightbox-spinner" aria-label="Loading image">
+            <div class="spinner-ring"></div>
+          </div>
+          <img id="lightbox-image" src="" alt="" class="lightbox-image" draggable="false">
+        </div>
+
+        <!-- Next Button -->
+        <button id="lightbox-next-btn" class="lb-nav-btn next-btn" aria-label="Next Image (Right Arrow)" title="Next (Right Arrow)">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <!-- Lightbox Footer / Metadata & Captions -->
+      <div class="lightbox-footer">
+        <div class="lightbox-caption-area">
+          <p id="lightbox-description" class="lightbox-description">Detailed image description goes here.</p>
+          <div class="lightbox-meta-row">
+            <div class="meta-item author-meta">
+              <i class="fa-solid fa-user"></i>
+              <span>Photo by <strong id="lightbox-author">Author Name</strong></span>
+            </div>
+            <div class="meta-item location-meta" id="lightbox-location-wrapper">
+              <i class="fa-solid fa-location-dot"></i>
+              <span id="lightbox-location">Location</span>
+            </div>
+            <div class="meta-item camera-meta" id="lightbox-camera-wrapper">
+              <i class="fa-solid fa-camera"></i>
+              <span id="lightbox-camera">Camera Specs</span>
+            </div>
+            <div class="lightbox-tags" id="lightbox-tags">
+              <!-- Tag chips -->
+            </div>
+          </div>
+        </div>
+
+        <div class="lightbox-footer-actions">
+          <button id="lightbox-like-btn" class="lb-like-btn" aria-label="Like this photo">
+            <i class="fa-regular fa-heart"></i>
+            <span id="lightbox-like-count">0</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lightbox Bottom Thumbnail Strip -->
+      <div class="lightbox-thumbs-container">
+        <div class="lightbox-thumbs-strip" id="lightbox-thumbs-strip" role="tablist" aria-label="Image Thumbnails">
+          <!-- Thumbnails injected via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Keyboard Shortcuts Cheat Sheet Modal -->
+  <div id="shortcuts-modal" class="shortcuts-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Keyboard Shortcuts">
+    <div class="shortcuts-backdrop" id="shortcuts-backdrop"></div>
+    <div class="shortcuts-card">
+      <div class="shortcuts-header">
+        <div class="shortcuts-title">
+          <i class="fa-solid fa-keyboard"></i>
+          <h3>Keyboard Shortcuts</h3>
+        </div>
+        <button id="shortcuts-close-btn" class="icon-btn" aria-label="Close shortcuts modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="shortcuts-list">
+        <div class="shortcut-item"><kbd>→</kbd> or <kbd>J</kbd> <span>Next Image in Lightbox</span></div>
+        <div class="shortcut-item"><kbd>←</kbd> or <kbd>K</kbd> <span>Previous Image in Lightbox</span></div>
+        <div class="shortcut-item"><kbd>Esc</kbd> <span>Close Lightbox / Modal</span></div>
+        <div class="shortcut-item"><kbd>Space</kbd> <span>Play / Pause Slideshow</span></div>
+        <div class="shortcut-item"><kbd>+</kbd> / <kbd>-</kbd> <span>Zoom In / Out</span></div>
+        <div class="shortcut-item"><kbd>F</kbd> <span>Toggle Fullscreen</span></div>
+        <div class="shortcut-item"><kbd>/</kbd> <span>Focus Search Bar</span></div>
+        <div class="shortcut-item"><kbd>T</kbd> <span>Toggle Dark / Light Theme</span></div>
+        <div class="shortcut-item"><kbd>?</kbd> <span>Show Shortcuts Guide</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
