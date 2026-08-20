@@ -22,3 +22,5 @@ An interactive image gallery built with HTML, CSS, and Vanilla JavaScript for th
 ### 🚀 Quick Start
 1. Open the `Task_1_Image_Gallery` directory.
 2. Launch `index.html` in your browser.
+
+ 
