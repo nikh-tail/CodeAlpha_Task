@@ -23,10 +23,10 @@
 
 | Task | Title | Key Tech & Features | Status |
 | :--- | :--- | :--- | :--- |
-| **Task 1** | [**LUMINA — Image Gallery**](./Task%201%20:%20Image%20Gallery/) | Masonry/Grid layouts, debounced search, CSS filters, fullscreen lightbox with zoom & EXIF | ✅ **Completed** |
-| **Task 2** | [**NEO-CALC Pro — Calculator**](./Task%202%20:%20Calculator/) | Standard & Scientific math, Web Audio synth feedback, unit converter suite, calculation tape | ✅ **Completed** |
-| **Task 3** | [**Personal Portfolio Site**](./Task%203%20:%20Portfolio%20Site/) | Particle canvas, dynamic themes, project modal specs, live GitHub API hub, contact panel | ✅ **Completed** |
-| **Task 4** | [**AURA — Hi-Fi Music Player**](./Task%204%20:%20Music%20Player/) | Web Audio spectrum visualizer, dynamic ambient glow, lyrics sync, shuffle/repeat, local audio import | ✅ **Completed** |
+| **Task 1** | [**LUMINA — Image Gallery**](./task-1-image-gallery/) | Masonry/Grid layouts, debounced search, CSS filters, fullscreen lightbox with zoom & EXIF | ✅ **Completed** |
+| **Task 2** | [**NEO-CALC Pro — Calculator**](./task-2-calculator/) | Standard & Scientific math, Web Audio synth feedback, unit converter suite, calculation tape | ✅ **Completed** |
+| **Task 3** | [**Personal Portfolio Site**](./task-3-portfolio/) | Particle canvas, dynamic themes, project modal specs, live GitHub API hub, contact panel | ✅ **Completed** |
+| **Task 4** | [**AURA — Hi-Fi Music Player**](./task-4-music-player/) | Web Audio spectrum visualizer, dynamic ambient glow, lyrics sync, shuffle/repeat, local audio import | ✅ **Completed** |
 
 ---
 
@@ -40,7 +40,7 @@ An interactive, fluid visual gallery designed for exploring photography and digi
 - **Fullscreen Lightbox**: Next/Prev looping navigation, bottom thumbnail preview strip, 250% zoom, automated slideshow mode, and rich EXIF camera metadata panel.
 - **Gesture & Keyboard Controls**: Touch swiping on mobile and full hotkey navigation (`←`, `→`, `Space`, `Esc`, `F`, `+`, `-`).
 
-👉 **Explore Folder:** [`Task 1 : Image Gallery/`](./Task%201%20:%20Image%20Gallery/)
+👉 **Explore Folder:** [`task-1-image-gallery/`](./task-1-image-gallery/)
 
 ---
 
@@ -57,7 +57,7 @@ An ultra-modern, tactile scientific and standard calculator engine with 4 themes
 - **Interactive Calculation Tape**: Side drawer recording expression history with timestamps and click-to-insert result feature.
 - **Keyboard & Memory Support**: Complete numpad listener, memory bank (**MC**, **MR**, **M+**, **M-**, **MS**), and 1-click clipboard copy with animated toast alerts.
 
-👉 **Explore Folder:** [`Task 2 : Calculator/`](./Task%202%20:%20Calculator/)
+👉 **Explore Folder:** [`task-2-calculator/`](./task-2-calculator/)
 
 ---
 
@@ -71,7 +71,7 @@ A personal developer portfolio engineered for **Nikhil Rathor** (Delhi Technolog
 - **Live GitHub Activity Hub**: Integrates directly with the GitHub API to fetch real-time public repositories, stars, and language stats for [`@nikh-tail`](https://github.com/nikh-tail).
 - **Interactive Contact Panel & 1-Click Clipboard**: Working contact form with topic selectors, and one-click copy buttons for email (`nikhilrathorq@gmail.com`) and phone (`+91 8882949593`).
 
-👉 **Explore Folder:** [`Task 3 : Portfolio Site/`](./Task%203%20:%20Portfolio%20Site/)
+👉 **Explore Folder:** [`task-3-portfolio/`](./task-3-portfolio/)
 
 ---
 
@@ -87,7 +87,7 @@ A feature-rich, modern audio streaming and visualizer web application.
 - **Playlist Manager & Local File Importer**: Live track search, genre filters, and local file picker allowing users to play custom `.mp3` / `.wav` audio files directly in the player.
 - **Sleep Timer & Favorites**: Countdown sleep timer (15–60 min) and favorite song tracking stored via `localStorage`.
 
-👉 **Explore Folder:** [`Task 4 : Music Player/`](./Task%204%20:%20Music%20Player/)
+👉 **Explore Folder:** [`task-4-music-player/`](./task-4-music-player/)
 
 ---
 

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="uas-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061113"/>
+      <stop offset="50%" stop-color="#0A1D20"/>
+      <stop offset="100%" stop-color="#040B0D"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#uas-bg)"/>
+  <circle cx="120" cy="140" r="160" fill="rgba(16, 185, 129, 0.09)"/>
+  <circle cx="680" cy="360" r="160" fill="rgba(6, 182, 212, 0.09)"/>
+  <g transform="translate(40, 30)">
+    <rect width="720" height="420" rx="14" fill="#071416" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+    <path d="M0,14 Q0,0 14,0 L706,0 Q720,0 720,14 L720,44 L0,44 Z" fill="#0D2327"/>
+    <circle cx="24" cy="22" r="5.5" fill="#EF4444"/><circle cx="40" cy="22" r="5.5" fill="#F59E0B"/><circle cx="56" cy="22" r="5.5" fill="#10B981"/>
+    <text x="360" y="26" fill="#34D399" font-family="'Fira Code', monospace" font-size="12" font-weight="600" text-anchor="middle">🚁 UAS-DTU — Autonomous Aerial Systems &amp; Vision Telemetry</text>
+    
+    <!-- HUD Screen -->
+    <g transform="translate(24, 56)">
+      <rect width="460" height="260" rx="8" fill="#040B0D" stroke="rgba(52, 211, 153, 0.3)" stroke-width="1"/>
+      <!-- Grid crosshairs -->
+      <line x1="230" y1="30" x2="230" y2="230" stroke="rgba(52, 211, 153, 0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="30" y1="130" x2="430" y2="130" stroke="rgba(52, 211, 153, 0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+      <circle cx="230" cy="130" r="60" fill="none" stroke="rgba(52, 211, 153, 0.3)" stroke-width="1"/>
+      <circle cx="230" cy="130" r="4" fill="#10B981"/>
+      
+      <!-- Object detection bounding boxes -->
+      <rect x="110" y="70" width="90" height="75" rx="3" fill="rgba(16, 185, 129, 0.15)" stroke="#10B981" stroke-width="1.5"/>
+      <text x="115" y="64" fill="#10B981" font-family="monospace" font-size="8.5">TARGET [0.94] 28.75N</text>
+      
+      <rect x="270" y="120" width="110" height="85" rx="3" fill="rgba(6, 182, 212, 0.15)" stroke="#06B6D4" stroke-width="1.5"/>
+      <text x="275" y="114" fill="#06B6D4" font-family="monospace" font-size="8.5">LANDING ZONE [0.98]</text>
+
+      <text x="16" y="24" fill="#34D399" font-family="monospace" font-size="9.5">ALT: 42.5m | SPD: 14.2m/s | BATT: 88%</text>
+      <text x="16" y="40" fill="#94A3B8" font-family="monospace" font-size="8.5">GPS: 28.7501° N, 77.1177° E (DTU Main Ground)</text>
+      <text x="340" y="24" fill="#10B981" font-family="monospace" font-size="9.5">● AUTOPILOT ACTIVE</text>
+    </g>
+
+    <!-- Telemetry & Sensor Stats -->
+    <g transform="translate(496, 56)">
+      <rect width="200" height="260" rx="8" fill="#040B0D" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <text x="14" y="24" fill="#FFFFFF" font-family="sans-serif" font-size="11" font-weight="700">Sensor &amp; Vision Telemetry</text>
+      
+      <rect x="10" y="38" width="180" height="44" rx="5" fill="#0D2327"/>
+      <text x="18" y="54" fill="#34D399" font-family="sans-serif" font-size="9" font-weight="700">Computer Vision</text>
+      <text x="18" y="70" fill="#94A3B8" font-family="monospace" font-size="8">YOLOv8 + OpenCV 60FPS</text>
+
+      <rect x="10" y="90" width="180" height="44" rx="5" fill="#0D2327"/>
+      <text x="18" y="106" fill="#34D399" font-family="sans-serif" font-size="9" font-weight="700">Flight Controller</text>
+      <text x="18" y="122" fill="#94A3B8" font-family="monospace" font-size="8">Pixhawk / MAVLink / ROS</text>
+
+      <rect x="10" y="142" width="180" height="44" rx="5" fill="#0D2327"/>
+      <text x="18" y="158" fill="#34D399" font-family="sans-serif" font-size="9" font-weight="700">Path Optimization</text>
+      <text x="18" y="174" fill="#94A3B8" font-family="monospace" font-size="8">A* Grid &amp; Obstacle Avoidance</text>
+
+      <rect x="10" y="194" width="180" height="54" rx="5" fill="rgba(16, 185, 129, 0.1)" stroke="#10B981" stroke-width="0.8"/>
+      <text x="18" y="212" fill="#10B981" font-family="sans-serif" font-size="9" font-weight="700">Delhi Tech University</text>
+      <text x="18" y="228" fill="#E2E8F0" font-family="sans-serif" font-size="8">Official DTU Autonomous Team</text>
+    </g>
+
+    <!-- Bottom info -->
+    <g transform="translate(24, 328)">
+      <rect width="672" height="72" rx="8" fill="#0D2327" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <text x="20" y="24" fill="#FFFFFF" font-family="sans-serif" font-size="11" font-weight="700">🚁 Autonomous Unmanned Aerial Systems (UAS-DTU)</text>
+      <text x="20" y="42" fill="#94A3B8" font-family="sans-serif" font-size="9.5">Autonomous target recognition, georeferencing, vision tracking algorithms, and real-time Python telemetry streaming.</text>
+      <text x="20" y="58" fill="#34D399" font-family="'Fira Code', monospace" font-size="8.5">Python 3.11 • OpenCV • MAVLink Protocol • Computer Vision • NumPy • Aerial Robotics</text>
+    </g>
+  </g>
+</svg>
