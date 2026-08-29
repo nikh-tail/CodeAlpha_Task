@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lum-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F0C20"/>
+      <stop offset="50%" stop-color="#181033"/>
+      <stop offset="100%" stop-color="#0B0718"/>
+    </linearGradient>
+    <linearGradient id="lum-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="art1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#9333EA"/></linearGradient>
+    <linearGradient id="art2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F43F5E"/><stop offset="100%" stop-color="#FB923C"/></linearGradient>
+    <linearGradient id="art3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
+    <linearGradient id="art4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#EC4899"/></linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#lum-bg)"/>
+  <circle cx="150" cy="120" r="160" fill="rgba(139, 92, 246, 0.12)"/>
+  <circle cx="680" cy="380" r="180" fill="rgba(236, 72, 153, 0.1)"/>
+  <g transform="translate(40, 30)">
+    <rect width="720" height="420" rx="14" fill="#110E24" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+    <path d="M0,14 Q0,0 14,0 L706,0 Q720,0 720,14 L720,44 L0,44 Z" fill="#191436"/>
+    <circle cx="24" cy="22" r="5.5" fill="#EF4444"/><circle cx="40" cy="22" r="5.5" fill="#F59E0B"/><circle cx="56" cy="22" r="5.5" fill="#10B981"/>
+    <text x="360" y="26" fill="#A78BFA" font-family="sans-serif" font-size="12" font-weight="600" text-anchor="middle">🎨 LUMINA — AI Visual Asset Exploration Platform</text>
+    
+    <g transform="translate(24, 60)">
+      <text x="0" y="22" fill="#FFFFFF" font-family="sans-serif" font-size="18" font-weight="800">LUMINA AI GALLERY</text>
+      <rect x="200" y="4" width="50" height="22" rx="6" fill="#8B5CF6"/><text x="225" y="19" fill="#FFFFFF" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">GRID</text>
+      <rect x="256" y="4" width="65" height="22" rx="6" fill="#1F1A3D"/><text x="288" y="19" fill="#A78BFA" font-family="sans-serif" font-size="10" text-anchor="middle">MASONRY</text>
+      <rect x="327" y="4" width="65" height="22" rx="6" fill="#1F1A3D"/><text x="359" y="19" fill="#A78BFA" font-family="sans-serif" font-size="10" text-anchor="middle">COMPACT</text>
+
+      <rect x="440" y="4" width="232" height="24" rx="6" fill="#1E183B" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="455" y="20" fill="#A78BFA" font-family="sans-serif" font-size="10.5">🔍 Filter styles, cyberpunk, portrait...</text>
+    </g>
+
+    <!-- Filter chips -->
+    <g transform="translate(24, 98)">
+      <rect x="0" y="0" width="45" height="20" rx="10" fill="url(#lum-accent)"/><text x="22" y="14" fill="#FFFFFF" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">All</text>
+      <rect x="52" y="0" width="60" height="20" rx="10" fill="#1E183B"/><text x="82" y="14" fill="#DDD6FE" font-family="sans-serif" font-size="9.5" text-anchor="middle">Cyberpunk</text>
+      <rect x="118" y="0" width="55" height="20" rx="10" fill="#1E183B"/><text x="145" y="14" fill="#DDD6FE" font-family="sans-serif" font-size="9.5" text-anchor="middle">Abstract</text>
+      <rect x="179" y="0" width="65" height="20" rx="10" fill="#1E183B"/><text x="211" y="14" fill="#DDD6FE" font-family="sans-serif" font-size="9.5" text-anchor="middle">3D Renders</text>
+      <rect x="250" y="0" width="60" height="20" rx="10" fill="#1E183B"/><text x="280" y="14" fill="#DDD6FE" font-family="sans-serif" font-size="9.5" text-anchor="middle">Portraits</text>
+      <rect x="316" y="0" width="65" height="20" rx="10" fill="#1E183B"/><text x="348" y="14" fill="#DDD6FE" font-family="sans-serif" font-size="9.5" text-anchor="middle">Cinematic</text>
+    </g>
+
+    <!-- Image Grid Gallery -->
+    <g transform="translate(24, 130)">
+      <!-- Card 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="155" height="180" rx="10" fill="url(#art1)"/>
+        <rect width="155" height="180" rx="10" fill="rgba(0,0,0,0.2)"/>
+        <rect x="8" y="128" width="139" height="44" rx="6" fill="rgba(17, 14, 36, 0.85)"/>
+        <text x="16" y="145" fill="#FFFFFF" font-family="sans-serif" font-size="10" font-weight="700">Neon Cyber Samurai</text>
+        <text x="16" y="160" fill="#A78BFA" font-family="sans-serif" font-size="8.5">Midjourney v6 • 4K HDR</text>
+      </g>
+      <!-- Card 2 -->
+      <g transform="translate(172, 0)">
+        <rect width="155" height="180" rx="10" fill="url(#art2)"/>
+        <rect width="155" height="180" rx="10" fill="rgba(0,0,0,0.2)"/>
+        <rect x="8" y="128" width="139" height="44" rx="6" fill="rgba(17, 14, 36, 0.85)"/>
+        <text x="16" y="145" fill="#FFFFFF" font-family="sans-serif" font-size="10" font-weight="700">Solar Flare Eclipse</text>
+        <text x="16" y="160" fill="#FDBA74" font-family="sans-serif" font-size="8.5">Stable Diffusion XL</text>
+      </g>
+      <!-- Card 3 (Lightbox Popout) -->
+      <g transform="translate(344, 0)">
+        <rect width="328" height="265" rx="12" fill="#0D0A1C" stroke="#8B5CF6" stroke-width="1.5"/>
+        <rect x="10" y="10" width="308" height="145" rx="8" fill="url(#art4)"/>
+        <circle cx="295" cy="30" r="10" fill="rgba(0,0,0,0.6)"/>
+        <text x="295" y="33" fill="#FFFFFF" font-family="sans-serif" font-size="10" text-anchor="middle">✕</text>
+        <text x="16" y="178" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="800">Futuristic Android Genesis</text>
+        <text x="16" y="195" fill="#A78BFA" font-family="sans-serif" font-size="9.5">Full Glassmorphism Lightbox • Zoom 250% • CSS Filter Presets</text>
+        <!-- Controls -->
+        <rect x="16" y="210" width="70" height="22" rx="4" fill="#8B5CF6"/><text x="51" y="224" fill="#FFFFFF" font-family="sans-serif" font-size="9" font-weight="700" text-anchor="middle">▶ Slideshow</text>
+        <rect x="92" y="210" width="65" height="22" rx="4" fill="#2A214D"/><text x="124" y="224" fill="#DDD6FE" font-family="sans-serif" font-size="9" text-anchor="middle">🔍 Zoom 2x</text>
+        <rect x="163" y="210" width="65" height="22" rx="4" fill="#2A214D"/><text x="195" y="224" fill="#DDD6FE" font-family="sans-serif" font-size="9" text-anchor="middle">🎨 Cyber Filter</text>
+        <rect x="234" y="210" width="75" height="22" rx="4" fill="#2A214D"/><text x="271" y="224" fill="#DDD6FE" font-family="sans-serif" font-size="9" text-anchor="middle">⬇ Download</text>
+        <rect x="16" y="240" width="296" height="14" rx="3" fill="#1B1536"/>
+        <text x="164" y="251" fill="#C4B5FD" font-family="monospace" font-size="8" text-anchor="middle">ISO 100 • 35mm f/1.4 • Octane Render • AI Upscaled</text>
+      </g>
+      <!-- Bottom row card -->
+      <g transform="translate(0, 192)">
+        <rect width="328" height="73" rx="10" fill="#16122E" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <text x="16" y="26" fill="#FFFFFF" font-family="sans-serif" font-size="11" font-weight="700">⚡ Modern Vanilla JS &amp; CSS Architecture</text>
+        <text x="16" y="44" fill="#A78BFA" font-family="sans-serif" font-size="9.5">Debounced search • Touch gestures • CSS Grid fluid auto-fill • Zero dependencies</text>
+        <text x="16" y="60" fill="#EC4899" font-family="sans-serif" font-size="9" font-weight="600">✨ 60 FPS Smooth CSS Transitions &amp; Multi-layout Switcher</text>
+      </g>
+    </g>
+  </g>
+</svg>

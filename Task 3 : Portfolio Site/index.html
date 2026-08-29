@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  
+  <title>Nikhil Rathor | Full-Stack Systems Architect &amp; DTU Engineer</title>
+  <meta name="description" content="Portfolio of Nikhil Rathor — Full-Stack Systems Architect &amp; DTU Computer Science Engineer building scalable web platforms, real-time WebSockets, offline C++ compilers, and computer vision systems." />
+  <meta name="keywords" content="Nikhil Rathor, DTU, Delhi Technological University, Full Stack Developer, React 19, TypeScript, Node.js, PostgreSQL, Socket.io, Computer Vision, Portfolio" />
+  <meta name="author" content="Nikhil Rathor" />
+
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nikhil Rathor | Full-Stack Systems Architect &amp; DTU Engineer" />
+  <meta property="og:description" content="Engineering high-performance web platforms, real-time distributed systems, and computer vision utilities." />
+  <meta property="og:image" content="assets/images/nikhil-hero.png" />
+  <meta property="og:url" content="https://nikh-tail.github.io/NIKHIL_RATHOR_PORTFOLIO_25_A04_035/" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6.5.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient Matrix Grid Background -->
+  <div class="matrix-grid-bg"></div>
+
+  <!-- Interactive Electric Purple Ambient Particle Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- ========================================================================
+       1. Site Header / Navigation
+       ======================================================================== -->
+  <header id="site-header" class="site-header">
+    <div class="container nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" aria-label="Nikhil Rathor Home">
+        <img src="assets/images/nikhil-logo.png" alt="Nikhil Rathor Logo" class="brand-logo-img" />
+        <div class="brand-title">
+          <span>NIKHIL RATHOR</span>
+          <span class="brand-tag">DTU • CSE '25</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#github-hub" class="nav-link">GitHub Live</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Live Status Pill -->
+        <div class="status-pill" title="Available for engineering opportunities & freelance projects">
+          <span class="status-dot"></span>
+          <span>Open to Roles</span>
+        </div>
+
+        <a href="#contact" class="btn btn-primary btn-sm" style="display: inline-flex;">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>Let's Connect</span>
+        </a>
+
+        <!-- Mobile Drawer Hamburger -->
+        <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
+    <a href="#home" class="nav-link">⚡ Home</a>
+    <a href="#about" class="nav-link">👨‍💻 About Me</a>
+    <a href="#skills" class="nav-link">🛠️ Skills &amp; Stack</a>
+    <a href="#projects" class="nav-link">🚀 Featured Projects</a>
+    <a href="#github-hub" class="nav-link">⚡ GitHub Live Hub</a>
+    <a href="#experience" class="nav-link">💼 Experience &amp; Journey</a>
+    <a href="#contact" class="nav-link">📬 Get in Touch</a>
+    <div style="margin-top: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); display: flex; gap: 0.75rem;">
+      <a href="https://github.com/nikh-tail" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="flex: 1;">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/nikhil-rathor-761675389/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="flex: 1;">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       2. Hero Section
+       ======================================================================== -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      
+      <!-- Hero Left: Content -->
+      <div class="hero-content">
+        <div class="hero-greeting">
+          <span>👋</span>
+          <span>Hello &amp; Welcome to my portfolio</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span style="display: block; color: #ffffff;">Full-Stack Systems Architect</span>
+          <span class="gradient-text">&amp; DTU Software Engineer</span>
+        </h1>
+
+        <div class="hero-typewriter-wrapper">
+          <span style="color: var(--text-muted); font-weight: 500; font-family: var(--font-main);">Specializing in </span>
+          <span id="typewriter-text" class="gradient-text"></span>
+          <span class="typewriter-cursor"></span>
+        </div>
+
+        <p class="hero-desc">
+          Engineering high-performance full-stack web platforms, real-time distributed campus systems, and computer vision utilities. Currently pursuing Computer Science at <strong>Delhi Technological University (DTU)</strong> with a focus on building delightful, scalable software.
+        </p>
+
+        <!-- CTA Buttons: 1 Primary + 2 Secondary/Ghost -->
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary">
+            <span>🚀 Explore Projects</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#github-hub" class="btn btn-secondary">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub Activity</span>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Get in Touch</span>
+          </a>
+        </div>
+
+        <!-- Quick Stats Bar -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Projects Built</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">300+</span>
+            <span class="stat-label">DSA Solved</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">DTU</span>
+            <span class="stat-label">Delhi Tech Univ</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Commitment</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Right: Avatar & Floating Orbiting Badges -->
+      <div class="hero-visual">
+        <div class="avatar-card">
+          <div class="avatar-glow-ring"></div>
+          
+          <div class="avatar-img-wrapper">
+            <img src="assets/images/nikhil-hero.png" alt="Nikhil Rathor" class="avatar-img" />
+          </div>
+
+          <!-- Floating Orbiting Badges -->
+          <div class="floating-pill pill-1">
+            <i class="fa-brands fa-react"></i>
+            <span>React 19</span>
+          </div>
+          <div class="floating-pill pill-2">
+            <i class="fa-brands fa-square-js"></i>
+            <span>TypeScript</span>
+          </div>
+          <div class="floating-pill pill-3">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Socket.io</span>
+          </div>
+          <div class="floating-pill pill-4">
+            <i class="fa-solid fa-brain"></i>
+            <span>C++ &amp; Vision</span>
+          </div>
+
+          <div class="avatar-footer-meta">
+            <div>
+              <strong style="color: var(--text-primary);">Nikhil Rathor</strong>
+              <div style="font-size: 0.76rem; color: var(--purple-bright);">Roll: 25/A04/035</div>
+            </div>
+            <div class="avatar-socials">
+              <a href="https://github.com/nikh-tail" target="_blank" rel="noopener noreferrer" class="avatar-social-btn" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/nikhil-rathor-761675389/" target="_blank" rel="noopener noreferrer" class="avatar-social-btn" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.instagram.com/nikhilrathor89/" target="_blank" rel="noopener noreferrer" class="avatar-social-btn" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="mailto:nikhilrathorq@gmail.com" class="avatar-social-btn" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. About Section (With Distinct Differentiated Icons)
+       ======================================================================== -->
+  <section id="about" class="section">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-user"></i> Engineering Philosophy
+        </span>
+        <h2 class="section-title">
+          Engineering with <span class="gradient-text">Passion &amp; Precision</span>
+        </h2>
+        <p class="section-subtitle">
+          Bridging strong foundational engineering principles, clean scalable architecture, and visual aesthetics to craft high-impact software.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        
+        <!-- Left: 4 Engineering Pillars with Distinct Icons -->
+        <div class="about-pillars-grid">
+          
+          <div class="pillar-item">
+            <div class="pillar-icon" style="color: #c084fc;"><i class="fa-solid fa-gauge-high"></i></div>
+            <h3 class="pillar-title">Solo Velocity &amp; Full-Stack</h3>
+            <p class="pillar-desc">Modern frontend applications using React 19, TypeScript, Tailwind CSS, combined with resilient Node.js backends and Neon Cloud PostgreSQL.</p>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon" style="color: #a855f7;"><i class="fa-solid fa-code"></i></div>
+            <h3 class="pillar-title">C++ &amp; Algorithmic Mastery</h3>
+            <p class="pillar-desc">Solved 300+ LeetCode problems with focus on time and space complexity optimizations, memory layouts, and algorithmic intuition.</p>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon" style="color: #38bdf8;"><i class="fa-solid fa-brain"></i></div>
+            <h3 class="pillar-title">AI &amp; Computer Vision</h3>
+            <p class="pillar-desc">OpenCV image inpainting, automated overlay detection, and aerial telemetry vision systems for unmanned aerial robotics.</p>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon" style="color: #e9d5ff;"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h3 class="pillar-title">Visual Storytelling</h3>
+            <p class="pillar-desc">Motion graphics, brand identity, and video editing expertise through Wyre Media and creative digital campaigns.</p>
+          </div>
+
+        </div>
+
+        <!-- Right: DTU Academic Profile Card -->
+        <div class="about-card">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.85rem;">
+              <span class="section-tag" style="margin-bottom: 0;">DTU Scholar</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-code);">Batch 2025 • New Delhi</span>
+            </div>
+            <h3 style="font-size: 1.45rem; font-weight: 800; margin-bottom: 0.85rem;">
+              Delhi Technological University (DTU)
+            </h3>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 1.25rem;">
+              Pursuing Computer Science &amp; Engineering (CSE) at DTU (formerly DCE). Actively building real-world student utility systems, robotics telemetry pipelines with UAS-DTU, and participating in engineering hackathons.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.88rem; color: var(--text-secondary);">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fa-solid fa-check" style="color: var(--purple-bright);"></i>
+                <span>Roll Number: <strong>25/A04/035</strong></span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fa-solid fa-check" style="color: var(--purple-bright);"></i>
+                <span>Focus: Distributed Systems, WebSockets, Computer Vision, C++</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fa-solid fa-check" style="color: var(--purple-bright);"></i>
+                <span>Location: New Delhi, India</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; margin-top: 1.75rem; flex-wrap: wrap;">
+            <a href="https://github.com/nikh-tail" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              <i class="fa-brands fa-github"></i> GitHub Profile
+            </a>
+            <a href="https://www.linkedin.com/in/nikhil-rathor-761675389/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. Skills Matrix Section
+       ======================================================================== -->
+  <section id="skills" class="section">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-sliders"></i> Technical Arsenal
+        </span>
+        <h2 class="section-title">
+          Skills &amp; <span class="gradient-text">Technologies</span>
+        </h2>
+        <p class="section-subtitle">
+          Core competencies refined across engineering projects, campus platforms, and systems tooling.
+        </p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="skills-controls">
+        <button class="filter-btn active" data-filter="all">All Tech Stack</button>
+        <button class="filter-btn" data-filter="frontend">Frontend &amp; UI</button>
+        <button class="filter-btn" data-filter="backend">Backend &amp; APIs</button>
+        <button class="filter-btn" data-filter="database">Databases &amp; Cloud</button>
+        <button class="filter-btn" data-filter="systems">C++ &amp; AI Vision</button>
+        <button class="filter-btn" data-filter="creative">Creative &amp; Media</button>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="skills-grid">
+        
+        <div class="skill-card" data-skill-category="frontend">
+          <div class="skill-icon-wrapper"><i class="fa-brands fa-react"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">React 18 &amp; 19</span>
+            <span class="skill-level-badge">Hooks • Context • Next.js</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill-category="frontend">
+          <div class="skill-icon-wrapper"><i class="fa-brands fa-square-js"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">TypeScript &amp; JS</span>
+            <span class="skill-level-badge">ES6+ • Strict Typing</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill-category="frontend">
+          <div class="skill-icon-wrapper"><i class="fa-brands fa-html5"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">HTML5 &amp; CSS3</span>
+            <span class="skill-level-badge">Grid • Flexbox • Semantic</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill-category="backend">
+          <div class="skill-icon-wrapper"><i class="fa-brands fa-node-js"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">Node.js &amp; Express</span>
+            <span class="skill-level-badge">REST APIs • Middleware</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill-category="backend">
+          <div class="skill-icon-wrapper"><i class="fa-solid fa-bolt"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">Socket.io WebSockets</span>
+            <span class="skill-level-badge">Real-Time Messaging</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill-category="database">
+          <div class="skill-icon-wrapper"><i class="fa-solid fa-database"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">PostgreSQL &amp; Prisma</span>
+            <span class="skill-level-badge">Neon Cloud • Schema Design</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill-category="systems">
+          <div class="skill-icon-wrapper"><i class="fa-solid fa-code"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">C++17 &amp; Algorithms</span>
+            <span class="skill-level-badge">clang++ • 300+ Solved</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill-category="systems">
+          <div class="skill-icon-wrapper"><i class="fa-brands fa-python"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">Python &amp; OpenCV</span>
+            <span class="skill-level-badge">Inpainting • Vision Telemetry</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill-category="database">
+          <div class="skill-icon-wrapper"><i class="fa-brands fa-git-alt"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">Git &amp; GitHub Actions</span>
+            <span class="skill-level-badge">CI/CD • Pages Deploy</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill-category="creative">
+          <div class="skill-icon-wrapper"><i class="fa-solid fa-photo-film"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">Video Editing &amp; Reels</span>
+            <span class="skill-level-badge">Premiere • After Effects</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill-category="creative">
+          <div class="skill-icon-wrapper"><i class="fa-brands fa-figma"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">Figma &amp; UI Mockups</span>
+            <span class="skill-level-badge">Design Systems • Wireframes</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill-category="backend">
+          <div class="skill-icon-wrapper"><i class="fa-solid fa-envelope"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">Resend OTP &amp; Auth</span>
+            <span class="skill-level-badge">Token Validation • Cloudinary</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. Featured Projects Showcase (With Multi-Slide Screenshot Carousels)
+       ======================================================================== -->
+  <section id="projects" class="section">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-laptop-code"></i> Engineering Portfolio
+        </span>
+        <h2 class="section-title">
+          Featured <span class="gradient-text">GitHub Projects</span>
+        </h2>
+        <p class="section-subtitle">
+          Real-world applications spanning full-stack web engineering, real-time WebSockets, offline C++ tooling, computer vision, and visual storytelling.
+        </p>
+      </div>
+
+      <!-- Project Category Filters -->
+      <div class="skills-controls">
+        <button class="filter-btn active" data-project-filter="all">All Projects</button>
+        <button class="filter-btn" data-project-filter="fullstack">Full-Stack Apps</button>
+        <button class="filter-btn" data-project-filter="ai-cv">AI &amp; Vision</button>
+        <button class="filter-btn" data-project-filter="systems">C++ &amp; Systems</button>
+        <button class="filter-btn" data-project-filter="creative">Creative &amp; Media</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        
+        <!-- 1. DTU Bazaar (With Carousel) -->
+        <article class="project-card" data-category="fullstack">
+          <div class="carousel-wrapper" data-carousel="dtu-bazaar">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="assets/images/dtu-bazaar-preview.svg" alt="DTU Bazaar Marketplace Feed" /></div>
+              <div class="carousel-slide"><img src="assets/images/dtu-bazaar-1.svg" alt="DTU Bazaar Real-Time Chat" /></div>
+            </div>
+            <button class="carousel-btn carousel-prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="carousel-btn carousel-next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="project-status-tag">● Live on Vercel</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">⚡ DTU Bazaar</h3>
+            <div class="project-tagline">Peer-to-Peer Campus Marketplace for DTU</div>
+            <p class="project-description">
+              High-performance marketplace engineered for Delhi Technological University students. Enables verified students to buy, sell, and trade textbooks, electronics, cycles, and hostel gear with real-time in-app messaging.
+            </p>
+            <ul class="project-highlights">
+              <li><i class="fa-solid fa-check"></i> Real-time chat powered by Socket.io</li>
+              <li><i class="fa-solid fa-check"></i> Email OTP verification via Resend API</li>
+              <li><i class="fa-solid fa-check"></i> Neon PostgreSQL DB with Prisma ORM</li>
+            </ul>
+            <div class="project-tech-stack">
+              <span class="tech-chip">React 18</span>
+              <span class="tech-chip">TypeScript</span>
+              <span class="tech-chip">Node.js</span>
+              <span class="tech-chip">PostgreSQL</span>
+              <span class="tech-chip">Socket.io</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://dtu-bazzar.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="https://github.com/nikh-tail/DTU-BAZZAR" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <i class="fa-brands fa-github"></i> Code
+              </a>
+              <button class="btn btn-outline btn-sm" data-modal-target="dtu-bazaar" style="margin-left: auto;">
+                <i class="fa-solid fa-circle-info"></i> Specs
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Lumina AI Image Gallery (With Carousel) -->
+        <article class="project-card" data-category="fullstack creative">
+          <div class="carousel-wrapper" data-carousel="lumina">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="assets/images/lumina-preview.svg" alt="Lumina Gallery Grid" /></div>
+              <div class="carousel-slide"><img src="assets/images/lumina-1.svg" alt="Lumina Lightbox & Filters" /></div>
+            </div>
+            <button class="carousel-btn carousel-prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="carousel-btn carousel-next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="project-status-tag">★ Featured</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">🎨 LUMINA — AI Image Gallery</h3>
+            <div class="project-tagline">Visual Asset Exploration &amp; Interactive Lightbox</div>
+            <p class="project-description">
+              Responsive visual art repository with fluid multi-layout switching (Grid, Masonry, Compact), debounced live search, CSS filter presets, and a glassmorphic interactive lightbox with 250% zoom and autoplay.
+            </p>
+            <ul class="project-highlights">
+              <li><i class="fa-solid fa-check"></i> Interactive lightbox with autoplay slideshow</li>
+              <li><i class="fa-solid fa-check"></i> Real-time debounced search &amp; category pills</li>
+              <li><i class="fa-solid fa-check"></i> CSS filter presets: Cyber, Noir, Sepia</li>
+            </ul>
+            <div class="project-tech-stack">
+              <span class="tech-chip">JavaScript</span>
+              <span class="tech-chip">CSS Grid</span>
+              <span class="tech-chip">Glassmorphism</span>
+              <span class="tech-chip">HTML5 Canvas</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/nikh-tail/CodeAplha---LUMINA---AI-IMAGE-GALLERY" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+              <button class="btn btn-outline btn-sm" data-modal-target="lumina-gallery" style="margin-left: auto;">
+                <i class="fa-solid fa-circle-info"></i> Specs
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. LeetLocal C++ Platform (With Carousel) -->
+        <article class="project-card" data-category="systems">
+          <div class="carousel-wrapper" data-carousel="leetlocal">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="assets/images/leetlocal-preview.svg" alt="LeetLocal Split IDE" /></div>
+              <div class="carousel-slide"><img src="assets/images/leetlocal-1.svg" alt="LeetLocal clang++ Benchmark" /></div>
+            </div>
+            <button class="carousel-btn carousel-prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="carousel-btn carousel-next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="project-status-tag">⚡ 300+ Solved</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">🧠 LeetLocal C++ Platform</h3>
+            <div class="project-tagline">Offline LeetCode Compilation &amp; Testing Suite</div>
+            <p class="project-description">
+              Offline compilation and benchmarking engine that fetches LeetCode problems via GraphQL, auto-generates test harnesses, and compiles natively using clang++/g++ with sub-millisecond execution.
+            </p>
+            <ul class="project-highlights">
+              <li><i class="fa-solid fa-check"></i> Native clang++/g++ compilation (-O2)</li>
+              <li><i class="fa-solid fa-check"></i> Tree &amp; Linked List serialization engine</li>
+              <li><i class="fa-solid fa-check"></i> Split-panel dark IDE with diff visualizer</li>
+            </ul>
+            <div class="project-tech-stack">
+              <span class="tech-chip">C++17</span>
+              <span class="tech-chip">clang++</span>
+              <span class="tech-chip">Node.js</span>
+              <span class="tech-chip">Algorithms</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/nikh-tail/DSA---LC-AND-OTHER-PROBLEMS" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> DSA Repo
+              </a>
+              <button class="btn btn-outline btn-sm" data-modal-target="leetlocal-runner" style="margin-left: auto;">
+                <i class="fa-solid fa-circle-info"></i> Specs
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. AI Image Watermark Remover (With Carousel) -->
+        <article class="project-card" data-category="ai-cv">
+          <div class="carousel-wrapper" data-carousel="watermark">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="assets/images/watermark-remover-preview.svg" alt="Watermark Inpainting Comparison" /></div>
+              <div class="carousel-slide"><img src="assets/images/watermark-1.svg" alt="Watermark Telea Algorithm" /></div>
+            </div>
+            <button class="carousel-btn carousel-prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="carousel-btn carousel-next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="project-status-tag">🪄 OpenCV</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">🪄 AI Image Watermark Remover</h3>
+            <div class="project-tagline">Automated Inpainting &amp; Artifact Elimination</div>
+            <p class="project-description">
+              Computer vision utility in Python and OpenCV using Fast Marching (Telea) and Navier-Stokes partial differential equation restoration to eliminate overlays and artifacts cleanly.
+            </p>
+            <ul class="project-highlights">
+              <li><i class="fa-solid fa-check"></i> Fast Marching (Telea) &amp; Navier-Stokes restoration</li>
+              <li><i class="fa-solid fa-check"></i> Automated morphological dilation masks</li>
+              <li><i class="fa-solid fa-check"></i> Batch photographic directory processing</li>
+            </ul>
+            <div class="project-tech-stack">
+              <span class="tech-chip">Python 3</span>
+              <span class="tech-chip">OpenCV</span>
+              <span class="tech-chip">NumPy</span>
+              <span class="tech-chip">Inpainting</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/nikh-tail/AI-IMAGE-WATERMARK-REMOVER" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+              <button class="btn btn-outline btn-sm" data-modal-target="watermark-remover" style="margin-left: auto;">
+                <i class="fa-solid fa-circle-info"></i> Specs
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. UAS-DTU Autonomous Aerial Systems (With Carousel) -->
+        <article class="project-card" data-category="systems ai-cv">
+          <div class="carousel-wrapper" data-carousel="uas">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="assets/images/uas-dtu-preview.svg" alt="UAS-DTU Target Tracking" /></div>
+              <div class="carousel-slide"><img src="assets/images/uas-1.svg" alt="UAS-DTU Telemetry HUD" /></div>
+            </div>
+            <button class="carousel-btn carousel-prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="carousel-btn carousel-next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="project-status-tag">🚁 Robotics</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">🚁 UAS-DTU Autonomous Systems</h3>
+            <div class="project-tagline">Vision Telemetry &amp; Autonomous Target Tracking</div>
+            <p class="project-description">
+              Autonomous object detection, camera georeferencing, and real-time MAVLink telemetry streaming for Delhi Technological University premier aerial robotics team.
+            </p>
+            <ul class="project-highlights">
+              <li><i class="fa-solid fa-check"></i> Real-time object detection &amp; classification</li>
+              <li><i class="fa-solid fa-check"></i> MAVLink telemetry protocol integration</li>
+              <li><i class="fa-solid fa-check"></i> Georeferencing target coordinates</li>
+            </ul>
+            <div class="project-tech-stack">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">OpenCV</span>
+              <span class="tech-chip">MAVLink</span>
+              <span class="tech-chip">Robotics</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/nikh-tail/uas-dtu-1" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> UAS Repo
+              </a>
+              <button class="btn btn-outline btn-sm" data-modal-target="uas-dtu" style="margin-left: auto;">
+                <i class="fa-solid fa-circle-info"></i> Specs
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Wyre Media Visual Storytelling -->
+        <article class="project-card" data-category="creative">
+          <div class="project-media-wrapper">
+            <img src="assets/images/project-truface.png" alt="Visual Motion Design" class="project-media-img" loading="lazy" />
+            <span class="project-status-tag">🎬 Wyre Media</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">🎬 Visual Motion Design &amp; 3D</h3>
+            <div class="project-tagline">Brand Identity, 3D Scenes &amp; Motion Graphics</div>
+            <p class="project-description">
+              Graphic design, video editing reels, and 3D visual concept storytelling produced for fintech startups, edtech platforms, and digital campaigns.
+            </p>
+            <ul class="project-highlights">
+              <li><i class="fa-solid fa-check"></i> High-tempo promotional video editing reels</li>
+              <li><i class="fa-solid fa-check"></i> Cross-platform UI/UX mockups in Figma</li>
+              <li><i class="fa-solid fa-check"></i> 3D atmospheric scene compositions</li>
+            </ul>
+            <div class="project-tech-stack">
+              <span class="tech-chip">Photoshop</span>
+              <span class="tech-chip">After Effects</span>
+              <span class="tech-chip">Figma</span>
+              <span class="tech-chip">Premiere Pro</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://www.instagram.com/nikhilrathor89/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-instagram"></i> Instagram
+              </a>
+              <button class="btn btn-outline btn-sm" data-modal-target="wyre-creative" style="margin-left: auto;">
+                <i class="fa-solid fa-circle-info"></i> Specs
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. Live GitHub Hub Section
+       ======================================================================== -->
+  <section id="github-hub" class="section">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-brands fa-github"></i> Open Source Hub
+        </span>
+        <h2 class="section-title">
+          Live <span class="gradient-text">GitHub Activity</span>
+        </h2>
+        <p class="section-subtitle">
+          Real-time metrics and repositories dynamically fetched from <a href="https://github.com/nikh-tail" target="_blank" rel="noopener noreferrer" style="color: var(--purple-bright); font-weight: 700;">@nikh-tail</a>.
+        </p>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="github-stats-bar">
+        <div class="github-stat-card">
+          <div id="gh-stat-repos" class="github-stat-val">10+</div>
+          <div class="github-stat-lbl">Public Repositories</div>
+        </div>
+        <div class="github-stat-card">
+          <div id="gh-stat-stars" class="github-stat-val">★ 15+</div>
+          <div class="github-stat-lbl">Stargazers Earned</div>
+        </div>
+        <div class="github-stat-card">
+          <div id="gh-stat-lang" class="github-stat-val">TypeScript</div>
+          <div class="github-stat-lbl">Primary Language</div>
+        </div>
+        <div class="github-stat-card">
+          <div id="gh-stat-status" class="github-stat-val" style="color: #10b981;">Active</div>
+          <div class="github-stat-lbl">API Integration</div>
+        </div>
+      </div>
+
+      <!-- Curated Live Repo Cards -->
+      <div class="github-repos-grid">
+        
+        <div class="repo-card">
+          <div>
+            <div class="repo-card-top">
+              <span class="repo-name"><i class="fa-regular fa-folder" style="color: var(--purple-bright);"></i> DTU-BAZZAR</span>
+              <span class="tech-chip">TypeScript</span>
+            </div>
+            <p class="repo-desc">Full-stack campus marketplace with Socket.io real-time chat, Resend email OTP, and Neon PostgreSQL database.</p>
+          </div>
+          <div class="repo-meta-row">
+            <span>⭐ Starred • Active</span>
+            <a href="https://github.com/nikh-tail/DTU-BAZZAR" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="repo-card">
+          <div>
+            <div class="repo-card-top">
+              <span class="repo-name"><i class="fa-regular fa-folder" style="color: var(--purple-bright);"></i> LUMINA-AI-GALLERY</span>
+              <span class="tech-chip">JavaScript</span>
+            </div>
+            <p class="repo-desc">Responsive visual art repository with fluid multi-layout switching, debounced search, CSS filters, and lightbox.</p>
+          </div>
+          <div class="repo-meta-row">
+            <span>⭐ Open Source</span>
+            <a href="https://github.com/nikh-tail/CodeAplha---LUMINA---AI-IMAGE-GALLERY" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="repo-card">
+          <div>
+            <div class="repo-card-top">
+              <span class="repo-name"><i class="fa-regular fa-folder" style="color: var(--purple-bright);"></i> DSA-LC-PROBLEMS</span>
+              <span class="tech-chip">C++17</span>
+            </div>
+            <p class="repo-desc">300+ LeetCode DSA problem solutions with optimal time/space complexity analysis and local compiler test harness.</p>
+          </div>
+          <div class="repo-meta-row">
+            <span>⭐ 300+ Solved</span>
+            <a href="https://github.com/nikh-tail/DSA---LC-AND-OTHER-PROBLEMS" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. Experience & Journey Timeline Section
+       ======================================================================== -->
+  <section id="experience" class="section">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-timeline"></i> Career Journey
+        </span>
+        <h2 class="section-title">
+          Experience &amp; <span class="gradient-text">Milestones</span>
+        </h2>
+        <p class="section-subtitle">
+          Key stages in my technical and academic growth across Delhi Technological University and client projects.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2021 – Present</span>
+            <h3 class="timeline-role">B.Tech in Computer Science &amp; Engineering</h3>
+            <div class="timeline-org">Delhi Technological University (DTU), New Delhi</div>
+            <p class="timeline-desc">Specializing in distributed systems, algorithms, database architectures, and computer vision. Active campus platform builder and technical contributor.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"><i class="fa-solid fa-plane"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2023 – 2024</span>
+            <h3 class="timeline-role">Vision &amp; Telemetry Engineer</h3>
+            <div class="timeline-org">UAS-DTU (Unmanned Aerial Systems)</div>
+            <p class="timeline-desc">Developed computer vision pipelines for aerial target recognition, camera georeferencing, and real-time MAVLink telemetry protocol integration for unmanned drones.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"><i class="fa-solid fa-video"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2022 – Present</span>
+            <h3 class="timeline-role">Founder &amp; Creative Producer</h3>
+            <div class="timeline-org">Wyre Media Creative Agency</div>
+            <p class="timeline-desc">Produced promotional video campaigns, brand design guidelines, and interactive digital graphics for clients across fintech and consumer platforms.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. Contact Section (With Polished Dark Inputs & Clear CTAs)
+       ======================================================================== -->
+  <section id="contact" class="section">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-paper-plane"></i> Direct Reachout
+        </span>
+        <h2 class="section-title">
+          Let's Build Something <span class="gradient-text">Exceptional</span>
+        </h2>
+        <p class="section-subtitle">
+          Have an opportunity, engineering project, or want to connect? Reach out directly.
+        </p>
+      </div>
+
+      <div class="contact-grid-layout">
+        
+        <!-- Contact Info Panel with 1-Click Copy -->
+        <div class="contact-info-panel">
+          <div>
+            <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 0.4rem;">Direct Contact</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Quick-copy contact information with 1 click:</p>
+          </div>
+
+          <div class="contact-item-box">
+            <div>
+              <p>Email Address</p>
+              <strong>Nikhilrathorq@gmail.com</strong>
+            </div>
+            <button class="btn btn-outline btn-sm" data-copy-val="Nikhilrathorq@gmail.com" data-copy-desc="Email copied!">
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+          </div>
+
+          <div class="contact-item-box">
+            <div>
+              <p>Phone / WhatsApp</p>
+              <strong>+91 8882949593</strong>
+            </div>
+            <button class="btn btn-outline btn-sm" data-copy-val="+91 8882949593" data-copy-desc="Phone copied!">
+              <i class="fa-regular fa-copy"></i> Copy
+            </button>
+          </div>
+
+          <div class="contact-item-box">
+            <div>
+              <p>Campus Base</p>
+              <strong>Delhi Technological University (DTU)</strong>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
+            <a href="https://github.com/nikh-tail" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="flex: 1;">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/nikhil-rathor-761675389/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="flex: 1;">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://www.instagram.com/nikhilrathor89/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="flex: 1;">
+              <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <div class="contact-form-panel">
+          <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 0.35rem;">Send a Direct Message</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Select intent topic and dispatch:</p>
+
+          <form id="main-contact-form">
+            <input type="hidden" id="contact-topic-input" value="Project Collaboration" />
+
+            <div class="topic-chips-group">
+              <button type="button" class="topic-chip active" data-topic="Project Collaboration">🚀 Project Collaboration</button>
+              <button type="button" class="topic-chip" data-topic="Internship / Role">💼 Internship / Role</button>
+              <button type="button" class="topic-chip" data-topic="Freelance Project">⚡ Freelance Project</button>
+              <button type="button" class="topic-chip" data-topic="Quick Chat">☕ Quick Chat</button>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="name-input">Your Name</label>
+              <input type="text" id="name-input" class="form-input" placeholder="e.g. Alex Thorne" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email-input">Your Email</label>
+              <input type="email" id="email-input" class="form-input" placeholder="e.g. alex@company.com" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message-input">Message</label>
+              <textarea id="message-input" class="form-textarea" placeholder="Tell me about your project, timeline, or engineering opportunity..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+              <span>Send Message</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       9. Project Details Modal Dialog (<dialog>)
+       ======================================================================== -->
+  <dialog class="project-modal" id="project-dialog" aria-labelledby="modal-dialog-title">
+    <div class="modal-header-visual">
+      <img id="modal-dialog-img" src="" alt="Project Banner" />
+      <button id="modal-dialog-exit-btn" class="modal-close-btn" aria-label="Close dialog">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="modal-content-body">
+      <div>
+        <h2 id="modal-dialog-title" style="font-size: 1.5rem; font-weight: 800;">Project Title</h2>
+        <div id="modal-dialog-tagline" style="font-size: 0.92rem; color: var(--purple-bright); font-weight: 600; margin-top: 0.2rem;">Project Tagline</div>
+      </div>
+      <p id="modal-dialog-desc" style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.65;"></p>
+      <div>
+        <h4 style="font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 0.5rem;">Key Highlights &amp; Systems Architecture:</h4>
+        <ul id="modal-dialog-highlights" style="display: flex; flex-direction: column; gap: 0.4rem; list-style: none;"></ul>
+      </div>
+      <div>
+        <h4 style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.5rem;">Technologies &amp; Protocols:</h4>
+        <div id="modal-dialog-stack" style="display: flex; flex-wrap: wrap; gap: 0.45rem;"></div>
+      </div>
+      <div style="display: flex; gap: 0.85rem; padding-top: 1.15rem; border-top: 1px solid var(--border-subtle); flex-wrap: wrap;">
+        <a id="modal-dialog-demo-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+        </a>
+        <a id="modal-dialog-repo-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          <i class="fa-brands fa-github"></i> Repository
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- ========================================================================
+       10. Footer
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      
+      <div class="footer-nav">
+        <div style="display: flex; align-items: center; gap: 0.6rem; font-weight: 800;">
+          <span class="status-dot"></span>
+          <span>NIKHIL RATHOR • DTU CSE</span>
+        </div>
+
+        <div style="display: flex; gap: 1.5rem; font-size: 0.88rem; font-weight: 600; color: var(--text-secondary);">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#github-hub" class="nav-link">GitHub Live</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <a href="#home" class="back-to-top">
+          <span>Back to top</span>
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+
+      <p style="font-size: 0.82rem; color: var(--text-muted);">
+        © <span id="footer-year">2026</span> <strong>NIKHIL RATHOR</strong> (DTU Roll: 25/A04/035). Engineered with modern full-stack web standards, electric purple cyber glow, and glassmorphism.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
