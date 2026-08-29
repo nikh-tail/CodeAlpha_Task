@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CodeAlpha Frontend Internship Suite by Nikhil Rathor - Interactive Hub showcasing Image Gallery, Calculator, Developer Portfolio, and Hi-Fi Music Player.">
+  <title>CodeAlpha Frontend Suite | Nikhil Rathor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #080b11;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --card-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+      
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --text-muted: #64748b;
+      
+      --cyan: #00f2fe;
+      --blue: #38bdf8;
+      --purple: #a855f7;
+      --pink: #ec4899;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      
+      --cyan-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+      --purple-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+      --emerald-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      --amber-gradient: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Ambient Lighting */
+    .ambient-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.3;
+      animation: floatOrb 20s infinite alternate ease-in-out;
+    }
+    .orb-1 { width: 500px; height: 500px; background: #00f2fe; top: -100px; left: -100px; }
+    .orb-2 { width: 550px; height: 550px; background: #7000ff; bottom: -120px; right: -120px; animation-duration: 25s; animation-delay: -5s; }
+    .orb-3 { width: 380px; height: 380px; background: #ec4899; top: 40%; left: 40%; animation-duration: 18s; animation-delay: -10s; }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(50px, 40px) scale(1.1); }
+      100% { transform: translate(-40px, 60px) scale(0.95); }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    /* Header & Hero */
+    .hero-header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 2rem 1rem 0;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.1rem;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+    }
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+    }
+
+    .gradient-text {
+      background: var(--cyan-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-sub);
+      max-width: 680px;
+      line-height: 1.6;
+    }
+
+    .author-bar {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    .author-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      padding: 0.45rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      backdrop-filter: blur(10px);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .author-chip:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+    .author-chip i {
+      color: var(--cyan);
+    }
+
+    /* Tasks Grid */
+    .tasks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .task-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 1.75rem;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .task-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--cyan-gradient);
+      opacity: 0.8;
+      transition: height 0.25s ease;
+    }
+
+    .task-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 242, 254, 0.4);
+      box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 242, 254, 0.15);
+    }
+
+    .task-card:hover::before {
+      height: 6px;
+    }
+
+    .task-card.card-2::before { background: var(--amber-gradient); }
+    .task-card.card-3::before { background: var(--purple-gradient); }
+    .task-card.card-4::before { background: var(--cyan-gradient); }
+    .task-card.card-1::before { background: var(--emerald-gradient); }
+
+    .task-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+    }
+
+    .task-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+    }
+
+    .card-1 .task-icon { background: rgba(16, 185, 129, 0.15); color: var(--emerald); border-color: rgba(16, 185, 129, 0.3); }
+    .card-2 .task-icon { background: rgba(245, 158, 11, 0.15); color: var(--amber); border-color: rgba(245, 158, 11, 0.3); }
+    .card-3 .task-icon { background: rgba(168, 85, 247, 0.15); color: var(--purple); border-color: rgba(168, 85, 247, 0.3); }
+    .card-4 .task-icon { background: rgba(0, 242, 254, 0.15); color: var(--cyan); border-color: rgba(0, 242, 254, 0.3); }
+
+    .task-num-badge {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      color: var(--text-sub);
+    }
+
+    .task-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.3px;
+    }
+
+    .task-desc {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-list li {
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .feature-list li i {
+      color: var(--emerald);
+      font-size: 0.75rem;
+    }
+
+    .tech-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-chip {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      color: var(--text-sub);
+    }
+
+    .launch-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 14px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      color: #000;
+      background: var(--cyan-gradient);
+      box-shadow: 0 6px 20px rgba(0, 242, 254, 0.35);
+    }
+
+    .card-1 .launch-btn { background: var(--emerald-gradient); color: #fff; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35); }
+    .card-2 .launch-btn { background: var(--amber-gradient); color: #fff; box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35); }
+    .card-3 .launch-btn { background: var(--purple-gradient); color: #fff; box-shadow: 0 6px 20px rgba(168, 85, 247, 0.35); }
+    .card-4 .launch-btn { background: var(--cyan-gradient); color: #000; box-shadow: 0 6px 20px rgba(0, 242, 254, 0.35); }
+
+    .launch-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+
+    /* Footer */
+    .portal-footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--card-border);
+      margin-top: 2rem;
+    }
+    .portal-footer a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient Scene -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="hero-header">
+      <div class="badge-pill">
+        <span class="badge-dot"></span>
+        <span>CodeAlpha Web Development Internship</span>
+      </div>
+
+      <h1 class="hero-title">
+        Frontend Engineering <span class="gradient-text">Task Suite</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        An interactive suite of 4 modern, responsive web applications built with semantic HTML5, modern CSS3 (Glassmorphism &amp; CSS Custom Properties), vanilla JavaScript (ES6+), and the Web Audio API.
+      </p>
+
+      <div class="author-bar">
+        <a href="https://github.com/nikh-tail" target="_blank" rel="noopener noreferrer" class="author-chip">
+          <i class="fa-brands fa-github"></i>
+          <span>@nikh-tail</span>
+        </a>
+        <a href="https://www.linkedin.com/in/nikhil-rathor-761675389/" target="_blank" rel="noopener noreferrer" class="author-chip">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>Nikhil Rathor (DTU CSE)</span>
+        </a>
+        <a href="https://github.com/nikh-tail/CodeAlpha_Task" target="_blank" rel="noopener noreferrer" class="author-chip">
+          <i class="fa-solid fa-code-fork"></i>
+          <span>Repository</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Tasks Grid -->
+    <main class="tasks-grid">
+      <!-- TASK 1: Responsive Image Gallery -->
+      <article class="task-card card-1">
+        <div>
+          <div class="task-header">
+            <div class="task-icon"><i class="fa-regular fa-images"></i></div>
+            <span class="task-num-badge">TASK 01</span>
+          </div>
+          <h2 class="task-title">LUMINA Image Gallery</h2>
+          <p class="task-desc">
+            Responsive multi-view visual asset gallery with debounced live search, CSS filter presets, and fullscreen lightbox.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> Grid, Masonry &amp; Compact Layouts</li>
+            <li><i class="fa-solid fa-check"></i> Lightbox with 250% Zoom &amp; Slideshow</li>
+            <li><i class="fa-solid fa-check"></i> EXIF Metadata &amp; Keyboard Shortcuts</li>
+          </ul>
+        </div>
+        <div>
+          <div class="tech-chips">
+            <span class="tech-chip">HTML5</span>
+            <span class="tech-chip">CSS Grid</span>
+            <span class="tech-chip">JavaScript</span>
+            <span class="tech-chip">Glassmorphism</span>
+          </div>
+          <a href="./Task 1 : Image Gallery/index.html" class="launch-btn">
+            <span>Launch Image Gallery</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- TASK 2: Build a Calculator -->
+      <article class="task-card card-2">
+        <div>
+          <div class="task-header">
+            <div class="task-icon"><i class="fa-solid fa-calculator"></i></div>
+            <span class="task-num-badge">TASK 02</span>
+          </div>
+          <h2 class="task-title">NEO-CALC Pro Calculator</h2>
+          <p class="task-desc">
+            Ultra-modern glassmorphic scientific calculator engine with tactile Web Audio API sound synthesis and unit converter.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> Standard &amp; Scientific (Trig/Log/Powers)</li>
+            <li><i class="fa-solid fa-check"></i> Tactile Audio Tone Synthesis</li>
+            <li><i class="fa-solid fa-check"></i> Unit Converter (Length, Weight, Temp, Storage)</li>
+            <li><i class="fa-solid fa-check"></i> Calculation History Tape &amp; Memory Keys</li>
+          </ul>
+        </div>
+        <div>
+          <div class="tech-chips">
+            <span class="tech-chip">Web Audio API</span>
+            <span class="tech-chip">JavaScript ES6</span>
+            <span class="tech-chip">4 Themes</span>
+            <span class="tech-chip">CSS3</span>
+          </div>
+          <a href="./Task 2 : Calculator/index.html" class="launch-btn">
+            <span>Launch Calculator</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- TASK 3: Build Your Own Portfolio Site -->
+      <article class="task-card card-3">
+        <div>
+          <div class="task-header">
+            <div class="task-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <span class="task-num-badge">TASK 03</span>
+          </div>
+          <h2 class="task-title">Developer Portfolio Site</h2>
+          <p class="task-desc">
+            Personal developer portfolio for Nikhil Rathor with interactive particle canvas, 3 themes, project specs modals, and live GitHub hub.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> Dynamic Hero with Typewriter &amp; Orbit Badges</li>
+            <li><i class="fa-solid fa-check"></i> Live GitHub Activity API Stats</li>
+            <li><i class="fa-solid fa-check"></i> Categorized Projects with 3D Tilt Cards</li>
+            <li><i class="fa-solid fa-check"></i> Contact Form with 1-Click Clipboard Copy</li>
+          </ul>
+        </div>
+        <div>
+          <div class="tech-chips">
+            <span class="tech-chip">Canvas 2D</span>
+            <span class="tech-chip">GitHub API</span>
+            <span class="tech-chip">Glassmorphism</span>
+            <span class="tech-chip">HTML5 / CSS3</span>
+          </div>
+          <a href="./Task 3 : Portfolio Site/index.html" class="launch-btn">
+            <span>Launch Portfolio</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- TASK 4: Music Player using JavaScript -->
+      <article class="task-card card-4">
+        <div>
+          <div class="task-header">
+            <div class="task-icon"><i class="fa-solid fa-music"></i></div>
+            <span class="task-num-badge">TASK 04</span>
+          </div>
+          <h2 class="task-title">AURA Hi-Fi Music Player</h2>
+          <p class="task-desc">
+            Next-gen web audio engine and streaming music player with live frequency spectrum visualizer and dynamic ambient glow.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> Web Audio 32-Band Spectrum Visualizer</li>
+            <li><i class="fa-solid fa-check"></i> Dynamic Ambient Backlight Glow</li>
+            <li><i class="fa-solid fa-check"></i> Synchronized Lyrics &amp; Spinning Vinyl Disc</li>
+            <li><i class="fa-solid fa-check"></i> Playlist Manager &amp; Local Audio Importer</li>
+          </ul>
+        </div>
+        <div>
+          <div class="tech-chips">
+            <span class="tech-chip">Web Audio API</span>
+            <span class="tech-chip">Canvas Visualizer</span>
+            <span class="tech-chip">HTML5 Audio</span>
+            <span class="tech-chip">JavaScript</span>
+          </div>
+          <a href="./Task 4 : Music Player/index.html" class="launch-btn">
+            <span>Launch Music Player</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="portal-footer">
+      <p>
+        Engineered with ❤️ by <strong>Nikhil Rathor</strong> • <a href="https://github.com/nikh-tail/CodeAlpha_Task" target="_blank" rel="noopener noreferrer">CodeAlpha_Task Repository</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

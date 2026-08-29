@@ -1,0 +1,77 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "routes": [
+    {
+      "src": "^/task-1/(.*)",
+      "dest": "/Task 1 : Image Gallery/$1"
+    },
+    {
+      "src": "^/gallery/(.*)",
+      "dest": "/Task 1 : Image Gallery/$1"
+    },
+    {
+      "src": "^/task-1$",
+      "dest": "/Task 1 : Image Gallery/index.html"
+    },
+    {
+      "src": "^/gallery$",
+      "dest": "/Task 1 : Image Gallery/index.html"
+    },
+    {
+      "src": "^/task-2/(.*)",
+      "dest": "/Task 2 : Calculator/$1"
+    },
+    {
+      "src": "^/calculator/(.*)",
+      "dest": "/Task 2 : Calculator/$1"
+    },
+    {
+      "src": "^/task-2$",
+      "dest": "/Task 2 : Calculator/index.html"
+    },
+    {
+      "src": "^/calculator$",
+      "dest": "/Task 2 : Calculator/index.html"
+    },
+    {
+      "src": "^/task-3/(.*)",
+      "dest": "/Task 3 : Portfolio Site/$1"
+    },
+    {
+      "src": "^/portfolio/(.*)",
+      "dest": "/Task 3 : Portfolio Site/$1"
+    },
+    {
+      "src": "^/task-3$",
+      "dest": "/Task 3 : Portfolio Site/index.html"
+    },
+    {
+      "src": "^/portfolio$",
+      "dest": "/Task 3 : Portfolio Site/index.html"
+    },
+    {
+      "src": "^/task-4/(.*)",
+      "dest": "/Task 4 : Music Player/$1"
+    },
+    {
+      "src": "^/music/(.*)",
+      "dest": "/Task 4 : Music Player/$1"
+    },
+    {
+      "src": "^/task-4$",
+      "dest": "/Task 4 : Music Player/index.html"
+    },
+    {
+      "src": "^/music$",
+      "dest": "/Task 4 : Music Player/index.html"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "^/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
